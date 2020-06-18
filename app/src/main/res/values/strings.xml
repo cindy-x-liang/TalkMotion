@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">TalkMotion</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+
+    <string-array name="gestures">
+        <item>upright_x</item>
+        <item>upright_y</item>
+        <item>upright_z</item>
+        <item>onback_x</item>
+        <item>onback_y</item>
+        <item>onback_z</item>
+        <item>onfront_x</item>
+        <item>onfront_y</item>
+        <item>onfront_z</item>
+    </string-array>
+
+    <string-array name="names">
+        <item>Hello </item>
+        <item>Yes </item>
+        <item>Goodbye</item>
+        <item>I don"'"t care</item>
+        <item>Here you go</item>
+        <item>I don"'"t know</item>
+        <item>No</item>
+        <item>That one</item>
+        <item>Come here</item>
+    </string-array>
+
+    <string-array name="mynames">
+        <item>Apple </item>
+        <item>Banana </item>
+        <item>Orange</item>
+        <item>Pear</item>
+        <item>Here you go</item>
+        <item>Peach</item>
+        <item>Snow</item>
+        <item>Camel</item>
+        <item>Tiger</item>
+    </string-array>
+
+
+
+    <string name="settings">Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="motion">motion</string>
+    <string name="restore_to_default">Restore to default</string>
+    <string name="save_changes">Save changes</string>
+    <string name="change_gesture">Change Gesture Words</string>
+    <string name="change_gesture_def">Change Gesture Definitions</string>
+    <string name="back">Back</string>
+</resources>
