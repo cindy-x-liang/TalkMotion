@@ -1,7 +1,7 @@
 # TalkMotion - The Gesture Recognition Android App
 A simple Android app that allows the user to speak by making gestures with their phone.
 
-This project is a continued effort from the summer 2019 research effort (Martin Zugschwert, Jack Kotheimer, Brianna Chou, and Jacob Kowalski) that developed the main application platform. 
+This project is a continued effort from the summer 2019 research effort (Martin Zugschwert, Jack Kotheimer, Brianna Chou, and Jacob Kowalski) that developed the main application platform. It is currently being developed by Tiffany Kumala and Cindy Liang. 
 
 ## Installation Guide
 1. You must have an Android device.
