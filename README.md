@@ -25,7 +25,7 @@ This project is a continued effort from the summer 2019 research effort (Martin 
     * Linear-Accelerometer and gravity sensors initialized
       - Each sensor sends an event to onSensorChanged method every few milliseconds
       - Based on the event type, we do different stuff with the data
-      - For an accelerometer event, we check if one of the values exeeds a certain threshold to trigger a sound
+      - For an accelerometer event, we check if one of the values exceeds a certain threshold to trigger a sound
       - For a gravity sensor event, we check the orientation of the phone and change the state of the state machine accordingly
     * Event handler methods for each button 
       - Turn the event listening on or off
