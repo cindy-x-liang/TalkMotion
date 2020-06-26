@@ -36,8 +36,8 @@ public class StateMachine {
 
     public boolean isPlaying() { return this.speaker.isPlaying(); }
     void say(String s) {
-        String[] gestures = this.db.getGestures(a.getNameChoices());
-        String[] names = this.db.getNames(a.getNameChoices());
+        String[] gestures = this.db.getGestures();
+        String[] names = this.db.getNames();
 
         for(int i = 0; i < names.length; i++) {
             if (s.equals(gestures[i])) {

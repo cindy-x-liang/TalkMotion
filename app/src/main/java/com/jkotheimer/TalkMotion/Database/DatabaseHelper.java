@@ -42,7 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         gestureNames = c.getResources().getStringArray(R.array.gestures);
         gestureWords = c.getResources().getStringArray(R.array.names);
-        gestureNewWords = c.getResources().getStringArray(R.array.mynames);
+
 
 
 
@@ -83,16 +83,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param names - The array of names to be written over the current names in the database
      * @return boolean - Determines if the insertion succeeded or not
      */
-    public boolean insertNames(String[] names, String[] gestures, Integer nameChoices) {
+    public boolean insertNames(String[] names, String[] gestures) {
         //gestureNames = c.getResources().getStringArray(R.array.gestures);
 
-        db.delete(TABLE_NAME, SCENARIOS + "=" +nameChoices, null);
+        db.delete(TABLE_NAME, SCENARIOS + "=" +0, null);
 
         ContentValues contentValues = new ContentValues();
         for(int i = 0; i < names.length; i++) {
             contentValues.put(WORDS, names[i]);
             contentValues.put(GESTURES, gestures[i]);
-            contentValues.put(SCENARIOS, nameChoices);
+            contentValues.put(SCENARIOS, 0);
             try {
                 db.insert(TABLE_NAME, null, contentValues);
             } catch (android.database.SQLException e){
@@ -102,7 +102,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public boolean updateGestureIds(String[] new_gesture_ids, String[] old_gesture_ids, Integer nameChoices) {
+    public boolean updateGestureIds(String[] new_gesture_ids, String[] old_gesture_ids) {
         //gestureNames = c.getResources().getStringArray(R.array.gestures);
 
         //db.delete(TABLE_NAME, SCENARIOS + "=" +nameChoices, null);
@@ -121,11 +121,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public String[] getNames(Integer nameChoices) {
+    public String[] getNames() {
         ArrayList<String> names = new ArrayList<>();
 
         Cursor cursor = this.db.rawQuery(
-                "SELECT "+ WORDS + " FROM " +  TABLE_NAME + " WHERE " + SCENARIOS + "=" + nameChoices, null);
+                "SELECT "+ WORDS + " FROM " +  TABLE_NAME + " WHERE " + SCENARIOS + "=" + 0, null);
                 //"SELECT " + (newName ? NEWWORDS : WORDS)  + " FROM " + TABLE_NAME, null);
         if (cursor.moveToFirst()) {
             do {
@@ -140,10 +140,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return returnNames;
     }
 
-    public String[] getGestures(Integer nameChoices) {
+    public String[] getGestures() {
         ArrayList<String> gestures = new ArrayList<>();
         Cursor cursor = this.db.rawQuery(
-                "SELECT " + GESTURES + " FROM " + TABLE_NAME+ " WHERE " + SCENARIOS + "=" + nameChoices, null);
+                "SELECT " + GESTURES + " FROM " + TABLE_NAME+ " WHERE " + SCENARIOS + "=" + 0, null);
         if (cursor.moveToFirst()) {
             do {
                 gestures.add(cursor.getString(cursor.getColumnIndex(GESTURES)));

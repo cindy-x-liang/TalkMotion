@@ -45,18 +45,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     // Triggered by a button push
     private boolean isOn = false;
 
-    public Integer getNameChoices() {
-        return nameChoices;
-    }
 
-    private Integer nameChoices = 0;
 
-    public boolean isNewName() {
-        return isNewName;
-    }
 
-    //Triggered by a checkbox
-    private boolean isNewName = false;
 
     // Boolean values that stop it from repeating itself
     private boolean wasX = false;
@@ -249,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                                int pos, long id) {
         // An item was selected. You can retrieve the selected item using
         // parent.getItemAtPosition(pos)
-        nameChoices = pos;
+
         Toast.makeText(parent.getContext(),
                 "OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString() + " position: " + pos + " id is : " + id,
                 Toast.LENGTH_SHORT).show();

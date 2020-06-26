@@ -34,8 +34,8 @@ class TransitionHandler {
         a.setContentView(R.layout.update_gestures);
 
         // Gather the static array containing all of the gesture names
-        String[] gestureNames = db.getNames(a.getNameChoices());
-        String[] gests = db.getGestures(a.getNameChoices());
+        String[] gestureNames = db.getNames();
+        String[] gests = db.getGestures();
         if (restoreToDefault) {
             gestureNames = a.getResources().getStringArray(R.array.names);
             gests = a.getResources().getStringArray(R.array.gestures);
@@ -129,7 +129,7 @@ class TransitionHandler {
             gestures[i] = spinners.get(i);
             System.out.println(names[i] +" mapped to " + gestures[i]);
         }
-        db.insertNames(names, gestures, a.getNameChoices());
+        db.insertNames(names, gestures);
         a.setContentView(R.layout.settings);
     }
 
@@ -141,7 +141,7 @@ class TransitionHandler {
 
         // Gather the static array containing all of the gesture names
 
-        String[] gests = db.getGestures(a.getNameChoices());
+        String[] gests = db.getGestures();
         if (restoreToDefault) {
            gests = a.getResources().getStringArray(R.array.gestures);
         }
@@ -231,7 +231,7 @@ class TransitionHandler {
             System.out.println(new_gest_names[i] +" mapped to " + old_gest_name[i]);
         }
         //db.insertNames(names, gestures, a.getNameChoices());
-        db.updateGestureIds(new_gest_names, old_gest_name, 0);
+        db.updateGestureIds(new_gest_names, old_gest_name);
         a.setContentView(R.layout.settings);
     }
 
